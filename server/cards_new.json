@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "name": "Void Spawn",
+        "type": "creature",
+        "attack": 2,
+        "health": 1,
+        "cost": 1,
+        "lore": "It whispers from the spaces between stars...",
+        "art": "👁️"
+    },
+    {
+        "id": 2,
+        "name": "Tentacled Horror",
+        "type": "creature",
+        "attack": 3,
+        "health": 3,
+        "cost": 3,
+        "lore": "Flesh writhes in impossible geometries.",
+        "art": "🐙"
+    },
+    {
+        "id": 3,
+        "name": "Cosmic Dread",
+        "type": "creature",
+        "attack": 1,
+        "health": 5,
+        "cost": 2,
+        "lore": "The stars align for something terrible.",
+        "art": "🌌"
+    },
+    {
+        "id": 4,
+        "name": "Elder Sigil",
+        "type": "creature",
+        "attack": 4,
+        "health": 2,
+        "cost": 4,
+        "lore": "Ancient symbols burn with eldritch power.",
+        "art": "⚡"
+    },
+    {
+        "id": 5,
+        "name": "Madness Incarnate",
+        "type": "creature",
+        "attack": 5,
+        "health": 1,
+        "cost": 3,
+        "lore": "Sanity crumbles before its presence.",
+        "art": "💀"
+    },
+    {
+        "id": 6,
+        "name": "Lurking Shadow",
+        "type": "creature",
+        "attack": 1,
+        "health": 2,
+        "cost": 1,
+        "lore": "It moves when you're not looking.",
+        "art": "👤"
+    },
+    {
+        "id": 7,
+        "name": "Aberrant Mind",
+        "type": "creature",
+        "attack": 2,
+        "health": 4,
+        "cost": 3,
+        "lore": "Thoughts that should not exist.",
+        "art": "🧠"
+    },
+    {
+        "id": 8,
+        "name": "Void Walker",
+        "type": "creature",
+        "attack": 3,
+        "health": 2,
+        "cost": 2,
+        "lore": "Between dimensions, it hunts.",
+        "art": "🚶"
+    },
+    {
+        "id": 9,
+        "name": "Eldritch Worm",
+        "type": "creature",
+        "attack": 1,
+        "health": 6,
+        "cost": 4,
+        "lore": "It devours reality itself.",
+        "art": "🪱"
+    },
+    {
+        "id": 10,
+        "name": "Nightmare Fuel",
+        "type": "creature",
+        "attack": 4,
+        "health": 1,
+        "cost": 2,
+        "lore": "Dreams become twisted horrors.",
+        "art": "😱"
+    },
+    {
+        "id": 11,
+        "name": "Cosmic Eye",
+        "type": "creature",
+        "attack": 0,
+        "health": 7,
+        "cost": 3,
+        "lore": "It sees all, judges all.",
+        "art": "👀"
+    },
+    {
+        "id": 12,
+        "name": "Forgotten One",
+        "type": "creature",
+        "attack": 6,
+        "health": 6,
+        "cost": 8,
+        "lore": "Lost to time, but not to hunger.",
+        "art": "🗿"
+    },
+    {
+        "id": 13,
+        "name": "Whispers of Chaos",
+        "type": "creature",
+        "attack": 2,
+        "health": 3,
+        "cost": 2,
+        "lore": "The void speaks in many tongues.",
+        "art": "🌀"
+    },
+    {
+        "id": 14,
+        "name": "Bone Crawler",
+        "type": "creature",
+        "attack": 3,
+        "health": 1,
+        "cost": 1,
+        "lore": "Death walks on broken limbs.",
+        "art": "🦴"
+    },
+    {
+        "id": 15,
+        "name": "Mind Flenser",
+        "type": "creature",
+        "attack": 1,
+        "health": 1,
+        "cost": 1,
+        "lore": "It peels away layers of sanity.",
+        "art": "🔪"
+    },
+    {
+        "id": 16,
+        "name": "Gibbering Mass",
+        "type": "creature",
+        "attack": 2,
+        "health": 2,
+        "cost": 2,
+        "lore": "Countless mouths speak in unison.",
+        "art": "🫧"
+    },
+    {
+        "id": 17,
+        "name": "Plague Bearer",
+        "type": "creature",
+        "attack": 1,
+        "health": 4,
+        "cost": 3,
+        "lore": "Corruption spreads through its touch.",
+        "art": "🦠"
+    },
+    {
+        "id": 18,
+        "name": "Twisted Prophet",
+        "type": "creature",
+        "attack": 2,
+        "health": 2,
+        "cost": 2,
+        "lore": "It preaches of the coming darkness.",
+        "art": "🔮"
+    },
+    {
+        "id": 19,
+        "name": "Void Titan",
+        "type": "creature",
+        "attack": 7,
+        "health": 4,
+        "cost": 7,
+        "lore": "A god among lesser horrors.",
+        "art": "⚫"
+    },
+    {
+        "id": 20,
+        "name": "Creeping Dread",
+        "type": "creature",
+        "attack": 0,
+        "health": 3,
+        "cost": 1,
+        "lore": "Fear made manifest.",
+        "art": "😰"
+    }
+]

@@ -1,0 +1,212 @@
+[
+    {
+        "id": 1,
+        "name": "Void Spawn",
+        "type": "creature",
+        "attack": 1,
+        "health": 1,
+        "cost": 1,
+        "lore": "A twisted creature born from the void.",
+        "art": "voidspawn.svg"
+    },
+    {
+        "id": 11,
+        "name": "The Emperor",
+        "type": "creature",
+        "attack": 3,
+        "health": 5,
+        "cost": 4,
+        "lore": "Absolute authority over the battlefield.",
+        "art": "theemperor.svg"
+    },
+    {
+        "id": 2,
+        "name": "The Fool",
+        "type": "creature",
+        "attack": 3,
+        "health": 3,
+        "cost": 3,
+        "lore": "Naive wanderer into forbidden realms.",
+        "art": "thefool.svg"
+    },
+    {
+        "id": 3,
+        "name": "Cosmic Dread",
+        "type": "creature",
+        "attack": 1,
+        "health": 5,
+        "cost": 2,
+        "lore": "The stars align for something terrible.",
+        "art": "cosmicdread.svg"
+    },
+    {
+        "id": 4,
+        "name": "The Magician",
+        "type": "creature",
+        "attack": 4,
+        "health": 2,
+        "cost": 4,
+        "lore": "Master of eldritch forces and cosmic will.",
+        "art": "themagician.svg"
+    },
+    {
+        "id": 5,
+        "name": "Death",
+        "type": "creature",
+        "attack": 5,
+        "health": 1,
+        "cost": 3,
+        "lore": "The end of all things, transformed.",
+        "art": "death.svg"
+    },
+    {
+        "id": 6,
+        "name": "Lurking Shadow",
+        "type": "creature",
+        "attack": 1,
+        "health": 2,
+        "cost": 1,
+        "lore": "It moves when you're not looking.",
+        "art": "lurking shadow.svg"
+    },
+    {
+        "id": 7,
+        "name": "The High Priestess",
+        "type": "creature",
+        "attack": 2,
+        "health": 4,
+        "cost": 3,
+        "lore": "Keeper of forbidden knowledge and secrets.",
+        "art": "thepriestess.svg"
+    },
+    {
+        "id": 8,
+        "name": "Void Walker",
+        "type": "creature",
+        "attack": 3,
+        "health": 2,
+        "cost": 2,
+        "lore": "Between dimensions, it hunts.",
+        "art": "voidwalker.svg"
+    },
+    {
+        "id": 9,
+        "name": "The Hermit",
+        "type": "creature",
+        "attack": 1,
+        "health": 6,
+        "cost": 4,
+        "lore": "Solitary seeker of cosmic truth.",
+        "art": "thehermit.svg"
+    },
+    {
+        "id": 10,
+        "name": "The Chariot",
+        "type": "creature",
+        "attack": 6,
+        "health": 6,
+        "cost": 6,
+        "lore": "Triumphant force crushing all opposition.",
+        "art": "thechariot.svg"
+    },
+        {
+        "id": 11,
+        "name": "The Emperor",
+        "type": "creature",
+        "attack": 3,
+        "health": 5,
+        "cost": 4,
+        "lore": "Absolute authority over the battlefield.",
+        "art": "�"
+    },
+    {
+        "id": 12,
+        "name": "The Hierophant",
+        "type": "creature",
+        "attack": 2,
+        "health": 7,
+        "cost": 5,
+        "lore": "Keeper of sacred mysteries.",
+        "art": "thehierophant.svg"
+    },
+    {
+        "id": 13,
+        "name": "Strength",
+        "type": "creature",
+        "attack": 5,
+        "health": 4,
+        "cost": 5,
+        "lore": "Raw power tamed by inner will.",
+        "art": "strength.svg"
+    },
+    {
+        "id": 14,
+        "name": "The World",
+        "type": "creature",
+        "attack": 7,
+        "health": 8,
+        "cost": 8,
+        "lore": "Completion of the cosmic cycle.",
+        "art": "theworld.svg"
+    },
+    {
+        "id": 15,
+        "name": "Mind Flenser",
+        "type": "creature",
+        "attack": 1,
+        "health": 1,
+        "cost": 1,
+        "lore": "It peels away layers of sanity.",
+        "art": "mindflenser.svg"
+    },
+    {
+        "id": 16,
+        "name": "Gibbering Mass",
+        "type": "creature",
+        "attack": 2,
+        "health": 2,
+        "cost": 2,
+        "lore": "Countless mouths speak in unison.",
+        "art": "gibberingmass.svg"
+    },
+    {
+        "id": 17,
+        "name": "The Hanged Man",
+        "type": "creature",
+        "attack": 1,
+        "health": 4,
+        "cost": 3,
+        "lore": "Sacrifice brings enlightenment.",
+        "art": "thehangedman.svg"
+    },
+    {
+        "id": 18,
+        "name": "Twisted Prophet",
+        "type": "creature",
+        "attack": 2,
+        "health": 2,
+        "cost": 2,
+        "lore": "It preaches of the coming darkness.",
+        "art": "twistedprophet.svg"
+    },
+    {
+        "id": 19,
+        "name": "The Tower",
+        "type": "creature",
+        "attack": 7,
+        "health": 4,
+        "cost": 7,
+        "lore": "Sudden destruction of false foundations.",
+        "art": "thetower.svg"
+    },
+    {
+        "id": 20,
+        "name": "Creeping Dread",
+        "type": "creature",
+        "attack": 0,
+        "health": 3,
+        "cost": 1,
+        "lore": "Fear made manifest.",
+        "art": "creepingdread.svg"
+    }
+]

@@ -1,0 +1,275 @@
+/* Card Styles */
+.card {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
+    border: 2px solid #808080;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(128, 128, 128, 0.2);
+    font-family: 'Abaddon', cursive;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(192, 192, 192, 0.1) 0%, 
+        transparent 30%, 
+        transparent 70%, 
+        rgba(128, 128, 128, 0.1) 100%);
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        0 0 25px rgba(255, 215, 0, 0.6);
+    border-color: #ffd700;
+}
+
+.card:hover::before {
+    background: linear-gradient(45deg, 
+        rgba(255, 215, 0, 0.2) 0%, 
+        transparent 30%, 
+        transparent 70%, 
+        rgba(255, 215, 0, 0.2) 100%);
+}
+
+.card.dragging {
+    transform: rotate(5deg) scale(1.1);
+    z-index: 1000;
+    opacity: 0.8;
+}
+
+.card.playable {
+    border-color: #c0c0c0;
+    animation: playable-pulse 2s infinite ease-in-out;
+}
+
+@keyframes playable-pulse {
+    0%, 100% { 
+        box-shadow: 0 0 15px rgba(192, 192, 192, 0.3);
+    }
+    50% { 
+        box-shadow: 0 0 25px rgba(192, 192, 192, 0.7);
+    }
+}
+
+/* Card Content */
+.card-name {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    font-size: 10px;
+    color: #c0c0c0;
+    text-align: center;
+    line-height: 1.2;
+    text-shadow: 0 0 5px rgba(192, 192, 192, 0.5);
+}
+
+.card-art {
+    position: absolute;
+    top: 25px;
+    left: 8px;
+    right: 8px;
+    bottom: 40px;
+    background: radial-gradient(circle, rgba(90, 90, 90, 0.3) 0%, rgba(60, 60, 60, 0.5) 100%);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(192, 192, 192, 0.3));
+}
+
+.card-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 0%, rgba(45, 27, 78, 0.7) 100%);
+}
+
+.card-cost {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ffd700 0%, #b8860b 100%);
+    border: 1px solid #ffed4a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #1a1a1a;
+    text-shadow: 0 0 3px rgba(255, 215, 0, 0.8);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+.card-attack {
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, #cc2200 0%, #8b0000 100%);
+    border: 1px solid #ff6b4a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.card-health {
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, #16a34a 0%, #0f5132 100%);
+    border: 1px solid #4ade80;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Hand card specific styling */
+.hand .card {
+    width: 60px;
+    height: 84px;
+    margin: 1px 0;
+    flex-shrink: 0;
+}
+
+.hand .card .card-name {
+    font-size: 8px;
+    top: 4px;
+}
+
+.hand .card .card-art {
+    top: 15px;
+    bottom: 20px;
+    font-size: 16px;
+}
+
+.hand .card .card-stats {
+    height: 20px;
+}
+
+.hand .card .card-cost {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+    top: 3px;
+    right: 3px;
+}
+
+.hand .card .card-attack,
+.hand .card .card-health {
+    width: 14px;
+    height: 14px;
+    font-size: 7px;
+}
+
+/* Card effects */
+.card.damaged {
+    animation: damage-flash 0.5s ease-out;
+}
+
+@keyframes damage-flash {
+    0% { 
+        background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+        transform: scale(1.1);
+    }
+    100% { 
+        background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
+        transform: scale(1);
+    }
+}
+
+.card.summoned {
+    animation: summon-glow 1s ease-out;
+}
+
+@keyframes summon-glow {
+    0% {
+        box-shadow: 0 0 30px rgba(192, 192, 192, 1);
+        transform: scale(1.2);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(128, 128, 128, 0.2);
+        transform: scale(1);
+    }
+}
+
+.card.selected {
+    border-color: #4ade80;
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.6);
+    transform: scale(1.05);
+}
+
+.card-slot.drag-over {
+    border-color: #808080;
+    background: linear-gradient(135deg, rgba(128, 128, 128, 0.3) 0%, rgba(60, 60, 60, 0.3) 100%);
+    box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
+}
+
+.card-slot.valid-target {
+    border-color: #ff6b4a;
+    background: linear-gradient(135deg, rgba(255, 107, 74, 0.3) 0%, rgba(45, 27, 78, 0.3) 100%);
+    cursor: crosshair;
+    animation: target-pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes target-pulse {
+    0%, 100% { 
+        box-shadow: 0 0 15px rgba(255, 107, 74, 0.4);
+    }
+    50% { 
+        box-shadow: 0 0 25px rgba(255, 107, 74, 0.8);
+    }
+}
+
+.card-back {
+    background: 
+        url('../assets/images/cardbackside.jpg') center/cover,
+        linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border: 2px solid rgba(128, 128, 128, 0.5);
+}
+
+.card-back .card-art {
+    font-size: 32px;
+    color: rgba(128, 128, 128, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}

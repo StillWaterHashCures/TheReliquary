@@ -1,0 +1,447 @@
+/* Custom Font */
+@font-face {
+    font-family: 'Abaddon';
+    src: url('../../abaddon.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+        url('../assets/images/background.gif') center/cover no-repeat,
+        #000000;
+    color: #c0c0c0;
+    font-family: 'Abaddon', cursive;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(100, 100, 100, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(80, 80, 80, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(60, 60, 60, 0.02) 0%, transparent 50%);
+    animation: void-pulse 8s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes void-pulse {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
+
+#game-container {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    height: 100vh;
+    max-height: 600px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 8px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Left Panel - Decks */
+#left-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.deck {
+    position: relative;
+    width: 90px;
+    height: 120px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.deck-back {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
+    border: 2px solid #808080;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 
+        0 0 20px rgba(128, 128, 128, 0.3),
+        inset 0 0 10px rgba(192, 192, 192, 0.1);
+    transition: all 0.3s ease;
+}
+
+.deck-back {
+    background-image: url('../assets/images/cardbackside.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.deck-back::before {
+    content: '∞';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    color: #808080;
+    text-shadow: 0 0 10px rgba(128, 128, 128, 0.8);
+    animation: eldritch-glow 2s infinite alternate;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deck:hover .deck-back {
+    transform: rotateY(5deg) scale(1.05);
+    box-shadow: 0 0 30px rgba(128, 128, 128, 0.5);
+}
+
+.deck-counter {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: radial-gradient(circle, #4a4a4a 0%, #2a2a2a 100%);
+    color: #c0c0c0;
+    border: 2px solid #808080;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+}
+
+#void-space {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(139, 69, 19, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: void-swirl 6s infinite linear;
+}
+
+@keyframes void-swirl {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Central Battlefield */
+#battlefield {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 20px 8px;
+}
+
+.player-area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    height: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.card-slot {
+    background: linear-gradient(135deg, rgba(60, 60, 60, 0.3) 0%, rgba(40, 40, 40, 0.3) 100%);
+    border: 2px dashed rgba(128, 128, 128, 0.4);
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 5/7;
+}
+
+.card-slot::before {
+    content: attr(data-slot);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 10px;
+    color: rgba(192, 192, 192, 0.3);
+}
+
+.card-slot:hover {
+    border-color: rgba(128, 128, 128, 0.8);
+    background: linear-gradient(135deg, rgba(60, 60, 60, 0.5) 0%, rgba(40, 40, 40, 0.5) 100%);
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.3);
+}
+
+.card-slot.occupied {
+    border-style: solid;
+    border-color: #808080;
+}
+
+#central-void {
+    flex: 0 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.void-sigil {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+}
+
+@keyframes logo-pulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 0.8;
+        filter: drop-shadow(0 0 10px rgba(128, 128, 128, 0.3));
+    }
+    50% { 
+        transform: scale(1.05); 
+        opacity: 1;
+        filter: drop-shadow(0 0 20px rgba(128, 128, 128, 0.6));
+    }
+}
+
+@keyframes sigil-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Right Panel - Meridian & Hands */
+#right-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.hand {
+    width: 76px;
+    height: 240px;
+    background: linear-gradient(135deg, rgba(60, 60, 60, 0.2) 0%, rgba(40, 40, 40, 0.2) 100%);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#opponent-hand {
+    margin-bottom: auto;
+}
+
+#player-hand {
+    margin-top: auto;
+}
+
+.hand-overflow {
+    font-size: 10px;
+    color: rgba(192, 192, 192, 0.7);
+    text-align: center;
+    padding: 4px;
+    background: rgba(60, 60, 60, 0.3);
+    border-radius: 4px;
+    border: 1px dashed rgba(128, 128, 128, 0.4);
+}
+
+#meridian-container {
+    width: 76px;
+    padding: 15px 0;
+    flex: 0 0 auto;
+}
+
+#meridian-bar {
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
+    border: 2px solid #808080;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+        0 0 15px rgba(128, 128, 128, 0.3),
+        inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#meridian-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ffd700 0%, #ffb000 100%);
+    width: 0%;
+    transition: width 0.8s ease;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: meridian-flow 2s infinite ease-in-out;
+}
+
+#meridian-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #2a2a2a;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 
+        0 0 4px rgba(255, 255, 255, 0.3),
+        0 0 2px rgba(0, 0, 0, 1),
+        1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+@keyframes meridian-flow {
+    0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.7); }
+}
+
+@keyframes eldritch-glow {
+    0% { text-shadow: 0 0 5px rgba(192, 192, 192, 0.5); }
+    100% { text-shadow: 0 0 15px rgba(192, 192, 192, 0.9); }
+}
+
+/* General animations and effects */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media screen and (max-width: 1200px) {
+    #game-container {
+        max-width: 100%;
+        grid-template-columns: 90px 1fr 90px;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .deck {
+        width: 70px;
+        height: 95px;
+    }
+    
+    .hand {
+        width: 66px;
+        height: 200px;
+    }
+    
+    .hand .card {
+        width: 50px;
+        height: 70px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #game-container {
+        grid-template-columns: 80px 1fr 80px;
+        gap: 8px;
+        padding: 8px;
+    }
+    
+    .hand {
+        width: 56px;
+        height: 180px;
+    }
+    
+    .hand .card {
+        width: 40px;
+        height: 56px;
+    }
+    
+    .player-area {
+        height: 100px;
+        gap: 6px;
+    }
+    
+    #central-void {
+        flex: 0 0 60px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .void-sigil {
+        width: 150px;
+        height: 45px;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    .player-area {
+        height: 90px;
+    }
+    
+    #central-void {
+        flex: 0 0 50px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .void-sigil {
+        width: 120px;
+        height: 35px;
+    }
+    
+    .hand {
+        height: 160px;
+    }
+    
+    #left-panel, #right-panel {
+        padding: 8px 0;
+    }
+}
+
+/* Discard notification animation */
+@keyframes discardPop {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5) translateY(20px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.1) translateY(-5px);
+    }
+    30% {
+        transform: translateX(-50%) scale(1) translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8) translateY(-10px);
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eldritch TCG</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cards.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Left side: Decks -->
+        <div id="left-panel">
+            <div id="opponent-deck" class="deck">
+                <div class="deck-counter">0</div>
+                <div class="deck-back"></div>
+            </div>
+            <div id="void-space"></div>
+            <div id="player-deck" class="deck">
+                <div class="deck-counter">20</div>
+                <div class="deck-back"></div>
+            </div>
+        </div>
+
+        <!-- Center: Battlefield -->
+        <div id="battlefield">
+            <div id="opponent-area" class="player-area">
+                <div class="card-slot" data-slot="0"></div>
+                <div class="card-slot" data-slot="1"></div>
+                <div class="card-slot" data-slot="2"></div>
+                <div class="card-slot" data-slot="3"></div>
+            </div>
+            
+            <div id="central-void">
+                <div class="void-sigil"></div>
+                <!-- Audio Controls -->
+                <div style="position: absolute; top: 10px; left: 10px; z-index: 1000;">
+                    <button id="mute-music" style="padding: 8px 12px; background: #333; color: #fff; border: 1px solid #666; cursor: pointer; font-size: 12px; border-radius: 4px;">
+                        🔊 Music
+                    </button>
+                </div>
+                
+
+                <!-- Hidden audio elements for testing -->
+                <audio id="test-audio" preload="auto" style="display: none;">
+                    <source src="assets/sounds/cardplay.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            
+            <div id="player-area" class="player-area">
+                <div class="card-slot" data-slot="0"></div>
+                <div class="card-slot" data-slot="1"></div>
+                <div class="card-slot" data-slot="2"></div>
+                <div class="card-slot" data-slot="3"></div>
+            </div>
+        </div>
+
+        <!-- Right side: Meridian & Hands -->
+        <div id="right-panel">
+            <div id="opponent-hand" class="hand"></div>
+            
+            <div id="meridian-container">
+                <div id="meridian-bar">
+                    <div id="meridian-fill"></div>
+                    <div id="meridian-text">3/3</div>
+                </div>
+            </div>
+            
+            <div id="player-hand" class="hand"></div>
+        </div>
+    </div>
+    <script src="js/audio-simple.js"></script>
+    <script src="js/websocket.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
