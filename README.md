@@ -6,6 +6,9 @@ tactical strategy card game. minimalist eldritch theme. browser-based multiplaye
 
 move cards around on a grid. try to win. has spooky cosmic horror vibes but not overdone.
 
+![Game Screenshot 1](client/assets/images/screen1.png)
+![Game Screenshot 2](client/assets/images/screen2.png)
+
 ## how to run
 
 ```bash
@@ -35,6 +38,10 @@ assets/     # images and sounds
 - turn based, no rng nonsense
 
 that's it. it works.
+
+## Known Bugs Version 1.0
+
+Music Mute button auto unmuted on Game Interaction.
 
 ## contributing
 
